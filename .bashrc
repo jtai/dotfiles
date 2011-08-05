@@ -118,7 +118,13 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
 fi
 
 if [ -d /usr/local/zend/bin ]; then
-    export PATH=$PATH:/usr/local/zend/bin
+    PATH=$PATH:/usr/local/zend/bin
 fi
 
-export EDITOR=vi
+if [ -d /usr/local/zend/mysql/bin ]; then
+    PATH=$PATH:/usr/local/zend/mysql/bin
+fi
+
+EDITOR=vi
+
+export PATH EDITOR
