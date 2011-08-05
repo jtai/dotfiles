@@ -50,6 +50,7 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 function git_branch {
+    [ "$PWD" = "$HOME" ] && return
     ref=$(git symbolic-ref HEAD 2> /dev/null) || return
     echo "("${ref#refs/heads/}")"
 }
@@ -82,7 +83,7 @@ if [ -x /usr/bin/dircolors ]; then
     #alias vdir='vdir --color=auto'
 fi
 
-if [ $(uname) == 'Darwin' ]; then
+if [ $(uname) = 'Darwin' ]; then
     alias ls='ls -G'
 
     if [ -f `brew --prefix`/etc/bash_completion ]; then
@@ -90,7 +91,7 @@ if [ $(uname) == 'Darwin' ]; then
     fi
 fi
 
-if [ -x /usr/bin/dircolors ] || [ $(uname) == 'Darwin' ]; then
+if [ -x /usr/bin/dircolors ] || [ $(uname) = 'Darwin' ]; then
     alias grep='grep --color=auto --exclude=*.svn-base'
     alias fgrep='fgrep --color=auto --exclude=*.svn-base'
     alias egrep='egrep --color=auto --exclude=*.svn-base'
