@@ -76,7 +76,13 @@ if [ -x /usr/bin/dircolors ]; then
     alias ls='ls --color=auto'
     #alias dir='dir --color=auto'
     #alias vdir='vdir --color=auto'
+fi
 
+if [ $(uname) == 'Darwin' ]; then
+    alias ls='ls -G'
+fi
+
+if [ -x /usr/bin/dircolors ] || [ $(uname) == 'Darwin' ]; then
     alias grep='grep --color=auto --exclude=*.svn-base'
     alias fgrep='fgrep --color=auto --exclude=*.svn-base'
     alias egrep='egrep --color=auto --exclude=*.svn-base'
