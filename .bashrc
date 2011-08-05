@@ -117,4 +117,8 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
+if [ -d /usr/local/zend/bin ]; then
+    export PATH=$PATH:/usr/local/zend/bin
+fi
+
 export EDITOR=vi
