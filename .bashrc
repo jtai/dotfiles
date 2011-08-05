@@ -117,13 +117,11 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-if [ -d /usr/local/zend/bin ]; then
-    PATH=$PATH:/usr/local/zend/bin
-fi
-
-if [ -d /usr/local/zend/mysql/bin ]; then
-    PATH=$PATH:/usr/local/zend/mysql/bin
-fi
+for dir in /usr/local/zend/bin /usr/local/zend/mysql/bin /usr/local/php/bin /usr/local/mysql/bin; do
+    if [ -d $dir ]; then
+        PATH=$PATH:$dir
+    fi
+done
 
 EDITOR=vi
 
