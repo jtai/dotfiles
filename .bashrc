@@ -50,7 +50,7 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 function git_branch {
-    [ "$PWD" = "$HOME" ] && return
+    $(git config --get remote.origin.url 2> /dev/null | grep '/dotfiles\.git$' > /dev/null) && return
     ref=$(git symbolic-ref HEAD 2> /dev/null) || return
     echo "("${ref#refs/heads/}")"
 }
