@@ -120,7 +120,7 @@ fi
 
 for dir in /usr/local/zend/bin /usr/local/zend/mysql/bin /usr/local/php/bin /usr/local/mysql/bin; do
     if [ -d $dir ]; then
-        PATH=$PATH:$dir
+        PATH=$dir:$PATH
     fi
 done
 
