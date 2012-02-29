@@ -39,6 +39,10 @@ syntax on
 set hlsearch
 highlight clear MatchParen
 
+" From http://mattiasgeniar.be/2012/02/18/a-vim-configuration-for-the-php-developer/
+" When searching, make sure the search hit is never at the bottom
+set scrolloff=5
+
 " Debian uses compressed helpfiles. We must inform vim that the main
 " helpfiles is compressed. Other helpfiles are stated in the tags-file.
 set helpfile=$VIMRUNTIME/doc/help.txt.gz
