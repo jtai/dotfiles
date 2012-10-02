@@ -82,6 +82,9 @@ au BufEnter * match TrailingWhitespace /\s\+$/
 au InsertEnter * match TrailingWhitespace /\s\+\%#\@<!$/
 au InsertLeave * match TrailingWhitespace /\s\+$/
 
+" Plugin manager
+call pathogen#infect('~/.vim-plugins')
+
 " The following are commented out as they cause vim to behave a lot
 " different from regular vi. They are highly recommended though.
 "set showcmd		" Show (partial) command in status line.

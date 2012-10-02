@@ -1,0 +1,12 @@
+[submodule ".vim-plugins/githublink.vim"]
+	path = .vim-plugins/githublink.vim
+	url = https://github.com/jtai/githublink.vim.git
+[submodule ".vim-plugins/vim-scala"]
+	path = .vim-plugins/vim-scala
+	url = https://github.com/derekwyatt/vim-scala
+[submodule ".vim-plugins/vim-coffee-script"]
+	path = .vim-plugins/vim-coffee-script
+	url = https://github.com/kchmck/vim-coffee-script
+[submodule ".vim-plugins/vim-pathogen"]
+	path = .vim-plugins/vim-pathogen
+	url = https://github.com/tpope/vim-pathogen
