@@ -75,6 +75,10 @@ augroup php
   au FileType php noremap <C-L> :w!<CR>:!php -l %<CR>
 augroup END
 
+augroup coffee
+  au BufRead *.coffee			set noswapfile
+augroup END
+
 " From Brad... highlight trailing spaces
 highlight TrailingWhitespace ctermbg=red guibg=red
 au ColorScheme * highlight TrailingWhitespace ctermbg=red guibg=red
