@@ -41,7 +41,6 @@ vnoremap p <Esc>:let current_reg = @"<CR>gvdi<C-R>=current_reg<CR><Esc>
 " Vim5 and later versions support syntax highlighting. Uncommenting the next
 " line enables syntax highlighting by default.
 syntax on
-colorscheme custom
 set hlsearch
 highlight clear MatchParen
 
@@ -94,6 +93,9 @@ au InsertLeave * match TrailingWhitespace /\s\+$/
 
 " Plugin manager
 call pathogen#infect('~/.vim-plugins')
+
+" Set colorscheme
+colorscheme womprat
 
 " The following are commented out as they cause vim to behave a lot
 " different from regular vi. They are highly recommended though.

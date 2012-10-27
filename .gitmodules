@@ -10,3 +10,6 @@
 [submodule ".vim-plugins/vim-githublink"]
 	path = .vim-plugins/vim-githublink
 	url = https://github.com/jtai/vim-githublink.git
+[submodule ".vim-plugins/vim-womprat"]
+	path = .vim-plugins/vim-womprat
+	url = https://github.com/jtai/vim-womprat.git
