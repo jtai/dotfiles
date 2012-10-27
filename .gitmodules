@@ -1,6 +1,3 @@
-[submodule ".vim-plugins/githublink.vim"]
-	path = .vim-plugins/githublink.vim
-	url = https://github.com/jtai/githublink.vim.git
 [submodule ".vim-plugins/vim-scala"]
 	path = .vim-plugins/vim-scala
 	url = https://github.com/derekwyatt/vim-scala
