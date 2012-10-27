@@ -7,3 +7,6 @@
 [submodule ".vim-plugins/vim-pathogen"]
 	path = .vim-plugins/vim-pathogen
 	url = https://github.com/tpope/vim-pathogen
+[submodule ".vim-plugins/vim-githublink"]
+	path = .vim-plugins/vim-githublink
+	url = https://github.com/jtai/vim-githublink.git
