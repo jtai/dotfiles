@@ -30,12 +30,18 @@ if &term =~ "xterm-debian" || &term =~ "xterm-xfree86"
   set t_Sb=[4%dm
 endif
 
+" 256 color support
+if &term =~ "xterm-256color"
+  set t_Co=256
+endif
+
 " Make p in Visual mode replace the selected text with the "" register.
 vnoremap p <Esc>:let current_reg = @"<CR>gvdi<C-R>=current_reg<CR><Esc>
 
 " Vim5 and later versions support syntax highlighting. Uncommenting the next
 " line enables syntax highlighting by default.
 syntax on
+colorscheme custom
 set hlsearch
 highlight clear MatchParen
 
