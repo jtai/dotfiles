@@ -118,7 +118,7 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-for dir in /usr/local/zend/bin /usr/local/zend/mysql/bin /usr/local/php/bin /usr/local/mysql/bin; do
+for dir in /usr/local/zend/bin /usr/local/zend/mysql/bin /usr/local/php/bin /usr/local/mysql/bin /usr/local/share/npm/bin; do
     if [ -d $dir ]; then
         PATH=$dir:$PATH
     fi
