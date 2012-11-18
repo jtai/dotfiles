@@ -118,12 +118,27 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
+# add special dirs in /usr/local to PATH
 for dir in /usr/local/zend/bin /usr/local/zend/mysql/bin /usr/local/php/bin /usr/local/mysql/bin /usr/local/share/npm/bin; do
     if [ -d $dir ]; then
         PATH=$dir:$PATH
     fi
 done
+export PATH
 
-EDITOR=vi
+# set DYLD_LIBRARY_PATH to fix memcached extension errors
+if [ -d /usr/local/zend/lib ]; then
+    DYLD_LIBRARY_PATH=/usr/local/zend/lib
+    export DYLD_LIBRARY_PATH
+fi
 
-export PATH EDITOR
+# on CentOS, view is aliased to old-school vi; fix that here
+# also set EDITOR to vim
+if [ -x /usr/bin/vim ]; then
+    alias vi='vim'
+    alias view='vim -R'
+
+    EDITOR=vim
+    export EDITOR
+fi
+
