@@ -127,10 +127,12 @@ done
 export PATH
 
 # set DYLD_LIBRARY_PATH to fix memcached extension errors
-if [ -d /usr/local/zend/lib ]; then
-    DYLD_LIBRARY_PATH=/usr/local/zend/lib
-    export DYLD_LIBRARY_PATH
-fi
+for dir in /usr/local/zend/lib /usr/local/mysql/lib; do
+    if [ -d /usr/local/zend/lib ]; then
+        DYLD_LIBRARY_PATH=/usr/local/zend/lib
+        export DYLD_LIBRARY_PATH
+    fi
+done
 
 # on CentOS, view is aliased to old-school vi; fix that here
 # also set EDITOR to vim
