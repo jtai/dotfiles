@@ -118,6 +118,12 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
+if [ -d /usr/local/etc/bash_completion.d ]; then
+  for completion in /usr/local/etc/bash_completion.d/*; do
+    . "$completion"
+  done
+fi
+
 # add special dirs in /usr/local to PATH
 for dir in /usr/local/zend/bin /usr/local/zend/mysql/bin /usr/local/php/bin /usr/local/mysql/bin /usr/local/share/npm/bin $HOME/.rvm/bin; do
     if [ -d $dir ]; then
