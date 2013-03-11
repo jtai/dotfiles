@@ -89,6 +89,12 @@ if [ $(uname) = 'Darwin' ]; then
     if [ -f `brew --prefix`/etc/bash_completion ]; then
         . `brew --prefix`/etc/bash_completion
     fi
+
+    if [ -d `brew --prefix`/etc/bash_completion.d ]; then
+      for completion in `brew --prefix`/etc/bash_completion.d/*; do
+        . "$completion"
+      done
+    fi
 fi
 
 if [ -x /usr/bin/dircolors ] || [ $(uname) = 'Darwin' ]; then
@@ -116,12 +122,6 @@ fi
 # sources /etc/bash.bashrc).
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
-fi
-
-if [ -d /usr/local/etc/bash_completion.d ]; then
-  for completion in /usr/local/etc/bash_completion.d/*; do
-    . "$completion"
-  done
 fi
 
 # add special dirs in /usr/local to PATH
