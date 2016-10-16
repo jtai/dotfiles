@@ -125,7 +125,7 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
 fi
 
 # add special dirs in /usr/local to PATH
-for dir in /usr/local/Cellar/openssh/latest/bin /usr/local/share/npm/bin $HOME/.rvm/bin; do
+for dir in /usr/local/share/npm/bin $HOME/.rvm/bin; do
     if [ -d $dir ]; then
         PATH=$dir:$PATH
     fi
