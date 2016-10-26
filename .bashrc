@@ -142,8 +142,8 @@ if [ -x /usr/bin/vim ]; then
     export EDITOR
 fi
 
-# additional machine-specific environment variables
-if [ -f "$HOME/.env" ]; then
-    . "$HOME/.env"
+# additional machine-specific config
+if [ -f "$HOME/.bashrc_local" ]; then
+    . "$HOME/.bashrc_local"
 fi
 
